@@ -1,0 +1,79 @@
+.homeContainer{
+    width: 40%;
+    height: 50%;
+    border-radius: 10px;
+    background-color: #3EAE3E;
+    box-shadow: 0 0 20px 8px #d0d0d0;
+    text-align: center;
+}
+.registerPannel{
+    margin: 2rem;
+}
+.fotter{
+    width: 100%;
+    margin-top: 3rem;
+}
+.copyright{
+    padding: 10px;
+}
+.loginForm > div{
+    position: relative;
+    margin: 2em;
+}
+
+.icon{
+    position: absolute;
+}
+
+.SignUpButton{
+    margin-top: 30px;
+}
+.buttonsPannel{
+    height: 100%;
+    display: grid;
+    justify-content: center;
+}
+.loginPannel{
+    margin-top: 2rem;
+}
+.login__input {
+	border: none;
+	border-bottom: 2px solid #D1D1D4;
+	background: none;
+	padding: 10px;
+	padding-left: 24px;
+	font-weight: 700;
+	width: 75%;
+	transition: .2s;
+}
+
+@media only screen and (max-width: 850px) {
+    .homeContainer{
+        width: 80%;
+        height: 50%;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+  }
+  
+  @keyframes fadeInDown {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  *:focus {
+      outline: none;
+  } 
+  
