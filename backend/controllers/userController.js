@@ -56,14 +56,25 @@ const userLogin = async (req, res) => {
   }
 };
 
-const getAllUsers = async (req, res) => {
-  const users = await User.find();
+const getUsersByName = async (req, res) => {
 
-  return res.send(users);
+  console.log(req.user)
+
+  if (req.query) {
+
+    const users = await User.find({
+      name: { $regex: req.query.name, $options: "i" }
+    }).find({ _id: { $ne: req.user._id } });
+
+    res.send(users)
+  } else {
+    res.status(401).json("Invalid Search Value!")
+  }
+
 };
 
 module.exports = {
   userRegister,
   userLogin,
-  getAllUsers,
+  getUsersByName,
 };

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button , Input } from "@mui/material";
 import { observer, inject } from "mobx-react";
+/* import LoadingButton from '@mui/lab/LoadingButton'; */
 
 const Register = inject("user")(
   observer((props) => {
@@ -8,19 +9,23 @@ const Register = inject("user")(
     <div>
       <div className="registerPannel">
             <div className="registerName">
-              <h3>Name :</h3>
-              <Input name="userName" onChange={props.user.handelRegisterInput} required={true} size="large" fullWidth={true} />
+              <span>Name :</span>
+              <Input name="userName" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
             </div>
             <div className="registerEmail">
-              <h3>Email :</h3>
-              <Input name="userEmail" onChange={props.user.handelRegisterInput} required={true} size="large" fullWidth={true} />
+              <span>Email :</span>
+              <Input name="userEmail" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
             </div>
             <div className="registerPassword">
-              <h3>Password :</h3>
-              <Input name="userPassword" onChange={props.user.handelRegisterInput} required={true} size="large" fullWidth={true} />
+              <span>Password :</span>
+              <Input name="userPassword" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
+            </div>
+            <div className="imageInput">
+              <span>Image :</span>
+              <Input name="image" accept="image/*" type="file" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
             </div>
             <div className="SignUpButton">
-              <Button size="large" onClick={props.handelRegister} variant="contained">
+              <Button size="large" onClick={props.user.submitRegister} variant="contained">
                 Sign Up
               </Button>
             </div>

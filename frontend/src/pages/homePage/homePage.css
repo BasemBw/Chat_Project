@@ -7,7 +7,11 @@
     text-align: center;
 }
 .registerPannel{
-    margin: 2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+.registerPannel > div{
+    margin: 5px;
 }
 .fotter{
     width: 100%;
