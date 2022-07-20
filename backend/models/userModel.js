@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require('bcryptjs')
 
 const userSchema = mongoose.Schema(
   {
@@ -7,7 +8,6 @@ const userSchema = mongoose.Schema(
     password: { type: String, required: true },
     image: {
       type: String,
-      required: true,
       default:
         "https://icon-library.com/images/anonymous-avatar-icon/anonymous-avatar-icon-25.jpg",
     },
@@ -16,6 +16,21 @@ const userSchema = mongoose.Schema(
     timeSamps: true,
   }
 );
+
+
+userSchema.methods.checkPassword = async function(EnterPassword){
+  return await bcrypt.compare(EnterPassword , this.password)
+}
+
+userSchema.pre('save' , async function(next){
+
+  if(!this.isModified){
+    return
+  }
+  
+  const HashSecure = await bcrypt.genSalt(10)
+  this.password = await bcrypt.hash(this.password , HashSecure)
+})
 
 const User = mongoose.model("User", userSchema);
 
