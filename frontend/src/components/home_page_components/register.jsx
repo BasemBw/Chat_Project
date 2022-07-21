@@ -10,19 +10,19 @@ const Register = inject("user")(
       <div className="registerPannel">
             <div className="registerName">
               <span>Name :</span>
-              <Input name="userName" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
+              <Input name="userName" onChange={props.user.handleInputs} required={true}  fullWidth={true} />
             </div>
             <div className="registerEmail">
               <span>Email :</span>
-              <Input name="userEmail" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
+              <Input name="userEmail" onChange={props.user.handleInputs} required={true}  fullWidth={true} />
             </div>
             <div className="registerPassword">
               <span>Password :</span>
-              <Input name="userPassword" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
+              <Input name="userPassword" onChange={props.user.handleInputs} required={true}  fullWidth={true} />
             </div>
             <div className="imageInput">
               <span>Image :</span>
-              <Input name="image" accept="image/*" type="file" onChange={props.user.handelRegisterInput} required={true}  fullWidth={true} />
+              <Input name="image" accept="image/*" type="file" onChange={props.user.handleInputs} required={true}  fullWidth={true} />
             </div>
             <div className="SignUpButton">
               <Button size="large" onClick={props.user.submitRegister} variant="contained">

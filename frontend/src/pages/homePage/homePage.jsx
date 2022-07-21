@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./homePage.css";
 import { observer, inject } from "mobx-react";
-import Register from "../../components/homePageComponents/register";
-import Login from "../../components/homePageComponents/login";
+import Register from "../../components/home_page_components/register";
+import Login from "../../components/home_page_components/login";
 import { Box, Tab} from "@mui/material";
 import {TabContext , TabList , TabPanel} from '@mui/lab';
 

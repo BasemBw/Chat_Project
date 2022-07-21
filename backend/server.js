@@ -3,7 +3,6 @@ const dotenv = require('dotenv')
 const mongoose = require('mongoose')
 const userApi = require('./routes/userRoutes')
 const chatApi = require('./routes/chatRoutes')
-const chatApi = require('./routes/chatRoutes')
 
 const app = express()
 dotenv.config()
